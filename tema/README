@@ -1,0 +1,33 @@
+Consumer.py
+Am ales sa implementez consumer-ul tinand cont de faptul ca fiecare thread
+al clasei Consumer va contine propria lista de carts. Nu am considerat necesara
+introducerea unor semafoare sau alte optiuni de control al thread-urilor.
+
+Producer.py
+Precum s-a specificat si in enunt, producer-ul va publica la nesfarsit produsele sale,
+tinand cont de raspunsul primit de la Marketplace si te timpul sau de asteptare.
+Nu am considerat necesara folosirea unor lock-uri iar "bucla de productie" a producer-ului
+a fost implementata cu structuri de tip for sau while true.
+
+Marketplace.py
+Marketplace retine in diverse liste informatiile care trec prin functiile acesteia.
+consumer_carts, producers_products, cons_id, sunt doar cateva din variabile.
+Marketplace retine o lista cu toate cart-urile atribuite unui consumer.
+De asemena retine o lista si pentru toate produsele atribuite unui producer.
+Exista o lista pentru consumeri si o lista pentru produceri.
+Deoarece operatiile pe liste precum append sau remove sunt operatii atomice,
+nu a fost necesara folosirea unor lock-uri.
+Au fost tratate fiecare caz in care producerul nu mai poate publica produse 
+sau consumer-ul nu mai gaseste produsul dorit.
+O lista va retine de asemenea si produsele + producatorul de la care s-a cumparat,
+acest lucru pentru a reusi sa retrimitem produsul returnat la producatorul original.
+
+In implementarea mea publish si add_to_cart functionaza ca un semafor 
+pentru Consumers si Producers.
+
+Am inclus in arhiva doar sursele:
+Producer.py
+Consumer.py
+Marketplace.py.
+
+
